@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  dev-container:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "2222:22" # перенаправляем локальный порт 2222 на порт 22 в контейнере
+    volumes:
+      - .:/usr/src/app
+    tty: true
